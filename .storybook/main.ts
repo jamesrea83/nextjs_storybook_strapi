@@ -15,6 +15,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-interactions',
 		'@storybook/addon-styling',
 		'storybook-css-modules',
+		'@etchteam/storybook-addon-css-variables-theme',
 	],
 	typescript: {
 		check: false,

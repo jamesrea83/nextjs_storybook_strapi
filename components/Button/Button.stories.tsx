@@ -1,14 +1,42 @@
-import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import Button from './Button';
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { Button } from './Button';
 
-export default {
-	title: 'Custom/Button',
+const meta: Meta<typeof Button> = {
+	title: 'Button',
 	component: Button,
-} as Meta;
-
-export const Primary: StoryFn = args => <Button {...args} />;
-Primary.args = {
-	label: 'Custom/Button',
-	primary: true,
 };
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+	args: {
+		children: 'Button',
+	},
+};
+
+// OLD
+// const meta: Meta<typeof Button> = {
+// 	title: 'Button',
+// 	component: Button,
+// };
+
+// export default meta;
+
+// type Story = StoryObj<typeof Button>;
+
+// export const Primary: Story = {
+// 	args: {
+// 		text: 'Primary Button',
+// 		color: 'primary',
+// 	},
+// };
+
+// export const Secondary: Story = {
+// 	args: {
+// 		text: 'Secondary Button',
+// 		color: 'secondary',
+// 	},
+// };
