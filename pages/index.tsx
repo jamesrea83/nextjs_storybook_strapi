@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-import { Button } from '@/components/Button/Button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +22,6 @@ export default function Home() {
 			</Head>
 			<main className={styles.main}>
 				<div className={styles.description}>
-					<Button />
 					<p>
 						Get started by editing&nbsp;
 						<code className={styles.code}>pages/index.tsx</code>

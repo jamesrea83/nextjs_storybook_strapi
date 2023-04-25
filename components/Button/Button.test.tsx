@@ -1,12 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@/test-utils';
 import userEvent from '@testing-library/user-event';
 import { Props } from './Button';
-import Button from './Button';
+import { Button } from './Button';
 
 describe('Button tests', () => {
 	it('should render', () => {
 		const buttonProps: Props = {
-			text: 'Test Button',
+			children: 'Test Button',
 			color: 'primary',
 			onClick: jest.fn(),
 		};
@@ -17,7 +17,7 @@ describe('Button tests', () => {
 
 	it('should call onClick on click', async () => {
 		const buttonProps: Props = {
-			text: 'Test Button',
+			children: 'Test Button',
 			color: 'primary',
 			onClick: jest.fn(),
 		};

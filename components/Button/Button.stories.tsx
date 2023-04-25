@@ -1,10 +1,15 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { expect } from '@storybook/jest';
 import { Button } from './Button';
+import { screen, userEvent } from '@storybook/testing-library';
 
 const meta: Meta<typeof Button> = {
 	title: 'Button',
 	component: Button,
+	args: {
+		children: 'Button',
+	},
 };
 
 export default meta;
@@ -12,31 +17,32 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
+	play: async ({ args }) => {
+		await userEvent.click(screen.getByRole('button'));
+		await expect(args.onClick).toHaveBeenCalled();
+	},
 	args: {
-		children: 'Button',
+		color: 'primary',
 	},
 };
 
-// OLD
-// const meta: Meta<typeof Button> = {
-// 	title: 'Button',
-// 	component: Button,
-// };
+export const Secondary: Story = {
+	...Primary,
+	args: {
+		color: 'secondary',
+	},
+};
 
-// export default meta;
+export const Warning: Story = {
+	...Primary,
+	args: {
+		color: 'warning',
+	},
+};
 
-// type Story = StoryObj<typeof Button>;
-
-// export const Primary: Story = {
-// 	args: {
-// 		text: 'Primary Button',
-// 		color: 'primary',
-// 	},
-// };
-
-// export const Secondary: Story = {
-// 	args: {
-// 		text: 'Secondary Button',
-// 		color: 'secondary',
-// 	},
-// };
+export const Danger: Story = {
+	...Primary,
+	args: {
+		color: 'danger',
+	},
+};

@@ -1,7 +1,9 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import path from 'path';
 
-const config: StorybookConfig = {
+const previewAnnotations: StorybookConfig = {
 	stories: [
 		'../pages/**/*.mdx',
 		'../pages/**/*.stories.@(js|jsx|ts|tsx)',
@@ -13,9 +15,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
-		'@storybook/addon-styling',
-		'storybook-css-modules',
-		'@etchteam/storybook-addon-css-variables-theme',
+		'@storybook/addon-a11y',
 	],
 	typescript: {
 		check: false,
@@ -41,8 +41,14 @@ const config: StorybookConfig = {
 				...config?.resolve?.alias,
 				'@': path.resolve(__dirname, '../'),
 			},
+			plugins: [
+				...(config?.resolve?.plugins || []),
+				new TsconfigPathsPlugin({
+					extensions: config?.resolve?.extensions,
+				}),
+			],
 		};
 		return config;
 	},
 };
-export default config;
+export default previewAnnotations;

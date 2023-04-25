@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider, Global } from '@emotion/react';
 import { Themes } from '../styles/themes';
+import { GlobalStyles } from '../styles/globals';
 import React from 'react';
 
 export const parameters = {
@@ -37,7 +38,14 @@ const withThemeProvider = (Story, context) => {
 	);
 };
 
-export const decorators = [withThemeProvider];
+const withGlobalStyles = (Story, context) => (
+	<>
+		<Global styles={GlobalStyles} />
+		<Story {...context} />
+	</>
+);
+
+export const decorators = [withThemeProvider, withGlobalStyles];
 
 // const preview: Preview = {
 // 	decorators: [withThemeProvider],

@@ -1,13 +1,16 @@
-import type { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Home from './index';
-import styles from '@/styles/Home.module.css';
 
-export default {
+const meta: Meta<typeof Home> = {
 	title: 'Pages/Home',
 	component: Home,
-} as Meta;
+};
 
-export const Primary: Story = args => <Home {...args} />;
+export default meta;
+
+type Story = StoryObj<typeof Home>;
+
+export const Primary: Story = {};
 
 // type Story = StoryObj<typeof Home>;
 
