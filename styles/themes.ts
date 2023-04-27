@@ -41,10 +41,10 @@ const light: AppTheme = {
 		warning: '#ffca2ce6;',
 	},
 	font: {
-		regular: '#504e55e6',
+		regular: '#504e55',
 		button: '#E4EBF5e6',
 		placeholder: '#504e55e6',
-		warning: '#504e55e6',
+		warning: '#504e55',
 		valid: '#1F784E',
 		invalid: '#BF3845',
 		logo: '#ffffff',
