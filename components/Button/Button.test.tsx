@@ -1,7 +1,7 @@
 import { render, screen } from '@/test-utils';
 import userEvent from '@testing-library/user-event';
 import { Props } from './Button';
-import { Button } from './Button';
+import { Button } from '.';
 
 describe('Button tests', () => {
 	it('should render', () => {

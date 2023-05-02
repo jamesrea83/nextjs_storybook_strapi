@@ -1,17 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { expect } from '@storybook/jest';
-import { Button } from './Button';
+import { Button } from '.';
 import { screen, userEvent } from '@storybook/testing-library';
 
-const meta: Meta<typeof Button> = {
-	title: 'Button',
+export default {
+	title: 'Controls/Button',
 	component: Button,
 	args: {
 		children: 'Button',
 	},
-};
-
-export default meta;
+} as Meta<typeof Button>;
 
 type Story = StoryObj<typeof Button>;
 

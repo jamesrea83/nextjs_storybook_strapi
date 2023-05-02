@@ -9,7 +9,8 @@
 		"lint": "next lint",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"test": "jest"
+		"test": "jest",
+		"chromatic": "npx chromatic --project-token=2a99d3c9d524"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.10.6",
@@ -26,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@storybook/addon-a11y": "^7.0.7",
+		"@storybook/addon-docs": "^7.0.7",
 		"@storybook/addon-essentials": "^7.0.6",
 		"@storybook/addon-interactions": "^7.0.6",
 		"@storybook/addon-links": "^7.0.6",

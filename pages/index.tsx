@@ -35,7 +35,6 @@ export default function Home() {
 								height={24}
 								priority
 							/>
-							HEY FZ
 						</a>
 					</div>
 				</div>

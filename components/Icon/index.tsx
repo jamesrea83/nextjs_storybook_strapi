@@ -1,3 +1,1 @@
-import { Icons } from './Icons';
-
-export type AvailableIcons = keyof typeof Icons;
+export { Icon, type Props, type AvailableIcons } from './Icon';

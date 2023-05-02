@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 
 export type Props = {
 	children: ReactNode;
+	/** Header string */
 	header: string;
 };
 

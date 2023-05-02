@@ -16,6 +16,7 @@ const previewAnnotations: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-a11y',
+		'@storybook/addon-docs',
 	],
 	typescript: {
 		check: false,
@@ -32,7 +33,7 @@ const previewAnnotations: StorybookConfig = {
 		options: {},
 	},
 	docs: {
-		autodocs: 'tag',
+		autodocs: true,
 	},
 	webpackFinal: async config => {
 		config.resolve = {

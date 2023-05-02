@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { FC, MouseEvent } from 'react';
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
 import { AppTheme } from '@/styles/themes';
@@ -7,8 +7,11 @@ import { boxShadow, transition, borderRadius } from '@/components/styles';
 export type Color = 'primary' | 'secondary' | 'danger' | 'warning';
 
 export type Props = {
+	/** Button text */
 	children: string;
+	/** Button color */
 	color: Color;
+	/** Click handler */
 	onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -62,22 +65,20 @@ Button.defaultProps = {
 	color: 'primary',
 };
 
-// OLD CSS Modules setup
-// export type Props = {
-// 	text: string;
-// 	color: 'primary' | 'secondary' | 'danger' | 'warning';
-// 	onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-// };
+type DefinedButton = Omit<Props, 'color'>;
 
-// const Button = ({ text, color, onClick }: Props) => {
-// 	return (
-// 		<button
-// 			className={classNames(styles.button, styles[color])}
-// 			onClick={onClick}
-// 		>
-// 			{text}
-// 		</button>
-// 	);
-// };
+export const PrimaryButton: FC<DefinedButton> = props => (
+	<Button color="primary" {...props} />
+);
 
-// export default Button;
+export const SecondaryButton: FC<DefinedButton> = props => (
+	<Button color="secondary" {...props} />
+);
+
+export const DangerButton: FC<DefinedButton> = props => (
+	<Button color="danger" {...props} />
+);
+
+export const WarningButton: FC<DefinedButton> = props => (
+	<Button color="warning" {...props} />
+);
