@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo tests should render 1`] = `
+<DocumentFragment>
+  <header
+    class="css-w0wbxr"
+  >
+    CoursesBox
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Logo tests should render with custom size 1`] = `
+<DocumentFragment>
+  <header
+    class="css-yc3p8m"
+    size="10"
+  >
+    CoursesBox
+  </header>
+</DocumentFragment>
+`;
