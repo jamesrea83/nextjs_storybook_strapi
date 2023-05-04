@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { expect } from '@storybook/jest';
 import { screen, userEvent } from '@storybook/testing-library';
-import { Logo } from '.';
+
+import { Logo } from './Logo';
 
 export default {
 	title: 'Content/Logo',

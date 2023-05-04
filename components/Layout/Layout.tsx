@@ -1,11 +1,11 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement } from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 
 import { Logo } from '@/components/Logo';
 import { Input } from '@/components/Input';
 import { IconButton } from '@/components/IconButton';
-import { transition } from '@/components/styles';
+import { StyledLink } from '@/components/StyledLink';
 
 const Wrapper = styled.div`
 	display: grid;
@@ -14,29 +14,46 @@ const Wrapper = styled.div`
 	background-color: ${({ theme }) => theme.background};
 	padding: 0.5rem;
 	grid-template-areas:
-		'header'
-		'nav'
-		'search'
-		'content'
-		'sidebar'
-		'footer';
-	${transition()}
+		'header nav'
+		'search search'
+		'content content'
+		'footer footer';
+	nav {
+		justify-content: flex-end;
+		gap: 5vmin;
+	}
 	@media (min-width: 500px) {
 		grid-template-columns: 1fr 3fr;
-		grid-template-areas:
-			'header 	search'
-			'nav 		nav'
-			'content 	content'
-			'footer 	footer';
-		nav {
-			flex-direction: row;
-			justify-content: space-between;
-		}
 	}
+	@media (min-width: 960px) {
+		grid-template-columns: 1fr 4fr 2fr;
+		grid-template-areas:
+			'header		search 	nav'
+			'content 	content	content'
+			'footer 	footer	footer';
+	}
+`;
+
+const LogoLink = styled(StyledLink)`
+	padding-right: 1vw;
 `;
 
 const StyledLogo = styled(Logo)`
 	grid-area: header;
+	display: flex;
+	align-items: center;
+	height: 4rem;
+	& .logo_full {
+		display: none;
+	}
+	@media (min-width: 560px) {
+		& .logo_short {
+			display: none;
+		}
+		& .logo_full {
+			display: inline;
+		}
+	}
 `;
 
 const MainNav = styled.nav`
@@ -44,14 +61,7 @@ const MainNav = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	padding: 0.5rem;
-	a {
-		cursor: pointer;
-		color: ${({ theme }) => theme.font.regular};
-		&:hover {
-			opacity: 0.7;
-		}
-	}
+	margin: 0 2vmin;
 `;
 
 const SearchInput = styled(Input)`
@@ -66,24 +76,41 @@ const Content = styled.main`
 
 const Footer = styled.footer`
 	grid-area: footer;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 5rem;
 `;
 
 type LayoutProps = {
-	children: ReactNode;
+	children: ReactElement;
+	onThemeToggle: () => void;
+	isDark: boolean;
 };
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
-	return (
-		<Wrapper>
-			<StyledLogo size={3}>C8X</StyledLogo>
-			<MainNav>
-				<Link href="/all">All</Link>
-				<Link href="/news">News</Link>
-				<IconButton name="Moon" size={1} onClick={() => null} />
-			</MainNav>
-			<SearchInput icon="Search" placeholder="Search" onChange={() => null} />
-			<Content>{children}</Content>
-			<Footer>Jimbob</Footer>
-		</Wrapper>
-	);
-};
+export const Layout: FC<LayoutProps> = ({
+	children,
+	onThemeToggle,
+	isDark,
+}) => (
+	<Wrapper>
+		<LogoLink href="/">
+			<StyledLogo size={3}>
+				<span className="logo_short">C8X</span>
+				<span className="logo_full">CoursesBox</span>
+			</StyledLogo>
+		</LogoLink>
+		<MainNav>
+			<StyledLink href="/all">All</StyledLink>
+			<StyledLink href="/news">News</StyledLink>
+			<IconButton
+				name={isDark ? 'Moon' : 'Sun'}
+				size={1}
+				onClick={onThemeToggle}
+			/>
+		</MainNav>
+		<SearchInput icon="Search" placeholder="Search" onChange={() => null} />
+		<Content>{children}</Content>
+		<Footer>Footer</Footer>
+	</Wrapper>
+);

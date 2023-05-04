@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledLink tests should render 1`] = `
+<DocumentFragment>
+  <a
+    class="css-17k6h9t"
+    href="test-link"
+  >
+    Link Test
+  </a>
+</DocumentFragment>
+`;

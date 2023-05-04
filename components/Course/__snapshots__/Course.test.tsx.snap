@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Course tests should render 1`] = `
+<DocumentFragment>
+  <section
+    class="css-18jn3fb"
+  >
+    <a
+      class="css-27b3am"
+      href="test-link"
+    >
+      <h2>
+        This is a header
+      </h2>
+      <img
+        alt="This is a header"
+        data-nimg="1"
+        decoding="async"
+        height="770"
+        loading="lazy"
+        src="/_next/image?url=%2Fhands-on_reactjs_cover.png&w=3840&q=75"
+        srcset="/_next/image?url=%2Fhands-on_reactjs_cover.png&w=1920&q=75 1x, /_next/image?url=%2Fhands-on_reactjs_cover.png&w=3840&q=75 2x"
+        style="color: transparent;"
+        width="1368"
+      />
+      orem ipsum dolor sit amet. Eum quaerat odio cum soluta quas aut sunt repellat et aliquid laboriosam. Aut corrupti excepturi est consequatur nostrum aut quos facere. Sit nobis voluptatum non veniam fuga est ducimus mollitia vel perspiciatis mollitia aut commodi praesentium vel officiis repellendus.
+    </a>
+  </section>
+</DocumentFragment>
+`;

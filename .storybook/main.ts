@@ -2,7 +2,6 @@ import type { StorybookConfig } from '@storybook/nextjs';
 // const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import path from 'path';
-
 const previewAnnotations: StorybookConfig = {
 	stories: [
 		'../pages/**/*.mdx',
