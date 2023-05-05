@@ -6,7 +6,7 @@ exports[`Layout tests should render 1`] = `
     class="css-7ldzj2"
   >
     <a
-      class="css-18f0ell"
+      class="css-4yccbr"
       href="/"
     >
       <header
@@ -26,14 +26,16 @@ exports[`Layout tests should render 1`] = `
       </header>
     </a>
     <nav
-      class="css-uzk3up"
+      class="css-181tzcb"
     >
       <a
+        class="css-j0tr8u"
         href="/all"
       >
         All
       </a>
       <a
+        class="css-j0tr8u"
         href="/news"
       >
         News

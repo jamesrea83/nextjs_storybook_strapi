@@ -3,7 +3,7 @@
 exports[`StyledLink tests should render 1`] = `
 <DocumentFragment>
   <a
-    class="css-17k6h9t"
+    class="css-j0tr8u"
     href="test-link"
   >
     Link Test
