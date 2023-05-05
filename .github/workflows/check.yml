@@ -15,14 +15,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: Install npm deps
-      run: npm i
+        run: npm i
 
       - name: Tests
-      run: npm test
+        run: npm test
 
       - name: Lint
-      run: npm run lint
+        run: npm run lint
