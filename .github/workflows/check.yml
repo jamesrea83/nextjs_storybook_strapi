@@ -1,10 +1,9 @@
-name: Check
+# .github/workflows/check.yml
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+# Workflow name
+name: 'Test & Lint'
+
+on:  push
 
 jobs:
   test_and_lint:
@@ -16,6 +15,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: npm ci
+      - run: npm install
       - run: npm test
       - run: npm lint
