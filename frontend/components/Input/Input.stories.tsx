@@ -30,7 +30,7 @@ export const Primary: Story = {
 export const WithIcon: Story = {
 	args: {
 		placeholder: 'Your name',
-		label: 'Name',
+		height: 4,
 		icon: 'Search',
 	},
 };
@@ -51,7 +51,6 @@ export const WithValidFeedback: Story = {
 export const WithInvalidFeedback: Story = {
 	args: {
 		placeholder: 'Your name',
-		label: 'Name',
 		feedback: <Feedback isValid={false}>Required!</Feedback>,
 	},
 	argTypes: {
