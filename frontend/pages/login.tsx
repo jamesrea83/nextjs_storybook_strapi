@@ -12,7 +12,7 @@ const StyledInput = styled(Input)`
 `;
 
 const Login: NextPage = () => {
-	const onSubmit = () => {};
+	const onSubmit = () => null;
 
 	return (
 		<form onSubmit={onSubmit}>

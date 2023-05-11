@@ -6,7 +6,7 @@ exports[`Layout tests should render 1`] = `
     class="css-7ldzj2"
   >
     <a
-      class="css-4yccbr"
+      class="css-o4zmmn"
       href="/"
     >
       <header
@@ -29,13 +29,13 @@ exports[`Layout tests should render 1`] = `
       class="css-181tzcb"
     >
       <a
-        class="css-j0tr8u"
+        class="css-nzbn0p"
         href="/all"
       >
         All
       </a>
       <a
-        class="css-j0tr8u"
+        class="css-nzbn0p"
         href="/news"
       >
         News
@@ -60,12 +60,15 @@ exports[`Layout tests should render 1`] = `
       </button>
     </nav>
     <label
-      class="css-1u4dfgx"
+      class="css-1f2mqsx"
       height="7"
       width="20"
     >
+      <span
+        class="css-porbx7"
+      />
       <div
-        class="css-o6338a"
+        class="css-bnug8b"
       >
         <input
           class="css-58wzc"
@@ -85,6 +88,9 @@ exports[`Layout tests should render 1`] = `
           />
         </svg>
       </div>
+      <span
+        class="css-tx5ech"
+      />
     </label>
     <main
       class="css-6z89iq"
