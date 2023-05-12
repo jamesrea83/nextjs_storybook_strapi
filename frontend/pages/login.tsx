@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
 
 import { CenteredTile } from '@/components/Tile';
-import { Input } from '@/components/Input';
+import { Input, ConditionalFeedback } from '@/components/Input';
 import { Button } from '@/components/Button';
 import { StyledLink } from '@/components/StyledLink';
 
@@ -18,32 +18,49 @@ export type LoginForm = {
 };
 
 const Login: NextPage = () => {
-	const { register, handleSubmit, setValue, setError } = useForm<LoginForm>();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<LoginForm>();
+
 	const onSubmit = (data: LoginForm) => {
 		console.log(data);
 	};
-
-	useEffect(() => {
-		register('identifier', { required: true, minLength: 6 });
-		register('password', { required: true, minLength: 6 });
-	}, []);
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<CenteredTile header="Login">
 				<StyledInput
-					name="identifier"
-					onChange={event => setValue('identifier', event.target.value)}
+					{...register('identifier', {
+						required: 'Required field',
+						minLength: { value: 6, message: 'Min length 6!' },
+					})}
+					feedback={
+						<ConditionalFeedback>
+							{errors?.identifier?.message}
+						</ConditionalFeedback>
+					}
 					label="Identifier"
 					placeholder="username or email"
-					height={6}
+					height={8}
+					role="textbox"
 				/>
 				<StyledInput
-					name="password"
-					onChange={event => setValue('password', event.target.value)}
+					{...register('password', {
+						required: 'Required field',
+						minLength: { value: 6, message: 'Min length 6!' },
+					})}
+					feedback={
+						<ConditionalFeedback>
+							{errors?.password?.message}
+						</ConditionalFeedback>
+					}
 					label="Password"
 					placeholder="password"
-					height={6}
+					height={8}
+					type="password"
+					role="textbox"
 				/>
 				<Button type="submit">Sign in</Button>
 				<h3>

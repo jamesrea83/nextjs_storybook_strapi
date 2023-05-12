@@ -13,8 +13,8 @@ exports[`Login page should render 1`] = `
           Login
         </h2>
         <label
-          class="css-r108hc"
-          height="6"
+          class="css-fp4izo"
+          height="8"
           width="20"
         >
           <span
@@ -29,15 +29,18 @@ exports[`Login page should render 1`] = `
               class="css-58wzc"
               name="identifier"
               placeholder="username or email"
+              role="textbox"
             />
           </div>
           <span
             class="css-tx5ech"
-          />
+          >
+             
+          </span>
         </label>
         <label
-          class="css-r108hc"
-          height="6"
+          class="css-fp4izo"
+          height="8"
           width="20"
         >
           <span
@@ -52,11 +55,15 @@ exports[`Login page should render 1`] = `
               class="css-58wzc"
               name="password"
               placeholder="password"
+              role="textbox"
+              type="password"
             />
           </div>
           <span
             class="css-tx5ech"
-          />
+          >
+             
+          </span>
         </label>
         <button
           class="css-odwgcq"

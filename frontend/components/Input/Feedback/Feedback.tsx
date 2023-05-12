@@ -1,10 +1,19 @@
+import { FC, ReactElement } from 'react';
 import styled from '@emotion/styled';
 
-type Props = {
-	isValid: boolean;
+type FeedbackProps = {
+	isValid?: boolean;
 };
 
-export const Feedback = styled.span<Props>`
+type ConditionalFeedbackProps = {
+	children?: string;
+};
+
+export const Feedback = styled.span<FeedbackProps>`
 	color: ${({ isValid, theme }) =>
 		isValid ? theme.font.valid : theme.font.invalid};
 `;
+
+export const ConditionalFeedback: FC<ConditionalFeedbackProps> = ({
+	children,
+}) => (children ? <Feedback>{children}</Feedback> : <>&nbsp;</>);
