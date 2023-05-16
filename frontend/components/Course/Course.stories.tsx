@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { expect } from '@storybook/jest';
-import { screen, userEvent } from '@storybook/testing-library';
+import { screen } from '@storybook/testing-library';
 
 import { Course } from './Course';
 

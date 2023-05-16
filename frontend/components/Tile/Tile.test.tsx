@@ -1,6 +1,4 @@
-import { render, screen } from '@/test-utils';
-import userEvent from '@testing-library/user-event';
-import { Props } from './Tile';
+import { render } from '@/test-utils';
 import { Tile } from './Tile';
 
 describe('Tile test cases', () => {

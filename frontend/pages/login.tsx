@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { forwardRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
 

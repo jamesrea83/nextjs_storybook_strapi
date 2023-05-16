@@ -11,7 +11,7 @@ export default {
 type Story = StoryObj<typeof Tile>;
 
 export const BasicTile: Story = {
-	play: async ({ args }) => {
+	play: async () => {
 		await expect(screen.getByRole('heading')).toBeInTheDocument();
 	},
 	args: {
@@ -21,7 +21,7 @@ export const BasicTile: Story = {
 };
 
 export const BasicSmallTile: Story = {
-	play: async ({ args }) => {
+	play: async () => {
 		await expect(screen.getByRole('heading')).toBeInTheDocument();
 	},
 	args: {

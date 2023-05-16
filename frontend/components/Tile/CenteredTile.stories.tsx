@@ -11,7 +11,7 @@ export default {
 type Story = StoryObj<typeof CenteredTile>;
 
 export const BasicCenteredTile: Story = {
-	play: async ({ args }) => {
+	play: async () => {
 		await expect(screen.getByRole('heading')).toBeInTheDocument();
 	},
 	args: {
