@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 
 import { CenteredTile } from '@/components/Tile';
 import { Input, ConditionalFeedback } from '@/components/Input';
+import { Button } from '@/components/Button';
+import { StyledLink } from '@/components/StyledLink';
 
 export type RegistrationForm = {
 	username: string;
@@ -30,7 +32,7 @@ const Registration: NextPage = () => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<CenteredTile header="Create an account">
 				<StyledInput
-					label="username"
+					label="Username"
 					placeholder="username"
 					{...register('username', {
 						required: 'Required field',
@@ -47,14 +49,13 @@ const Registration: NextPage = () => {
 					}
 				></StyledInput>
 				<StyledInput
-					label="email"
+					label="Email"
 					placeholder="email"
 					{...register('email', {
 						required: 'Required field',
-						minLength: { value: 6, message: 'Min length 6!' },
 						pattern: {
-							value: /^[\w\d\s]+$/,
-							message: 'Only letters, numbers & spaces',
+							value: /^\S+@\S+$/,
+							message: 'Invalid email',
 						},
 					})}
 					feedback={
@@ -62,7 +63,7 @@ const Registration: NextPage = () => {
 					}
 				></StyledInput>
 				<StyledInput
-					label="password"
+					label="Password"
 					placeholder="password"
 					{...register('password', {
 						required: 'Required field',
@@ -78,6 +79,12 @@ const Registration: NextPage = () => {
 						</ConditionalFeedback>
 					}
 				></StyledInput>
+				<Button type="submit">Sign up</Button>
+				<h3>
+					<StyledLink href="/login" underline={1}>
+						Log in
+					</StyledLink>
+				</h3>
 			</CenteredTile>
 		</form>
 	);
