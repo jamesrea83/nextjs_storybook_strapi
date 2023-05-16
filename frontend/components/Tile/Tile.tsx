@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react';
-import { boxShadow, transition, borderRadius } from '@/components/styles';
+import { boxShadow, borderRadius } from '@/components/styles';
 import styled from '@emotion/styled';
 
 export type Props = {
 	children: ReactNode;
-	/** Header string */
-	header: string;
+	/** Header */
+	header: ReactNode;
 };
 
 const Section = styled.section`
@@ -17,8 +17,8 @@ const Section = styled.section`
 		boxShadow(theme?.components?.shadow1, theme?.components?.shadow2)}
 `;
 
-export const Tile: FC<Props> = ({ children, header }) => (
-	<Section>
+export const Tile: FC<Props> = ({ children, header, ...rest }) => (
+	<Section {...rest}>
 		<h2>{header}</h2>
 		{children}
 	</Section>

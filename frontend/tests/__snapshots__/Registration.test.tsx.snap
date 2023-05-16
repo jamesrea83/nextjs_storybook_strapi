@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration page should render 1`] = `
+<div>
+  <form>
+    <div
+      class="css-42099h"
+    >
+      <section
+        class="css-1beoq7g"
+      >
+        <h2>
+          Create an account
+        </h2>
+        <label
+          class="css-1adzpiz"
+          height="7"
+          width="20"
+        >
+          <span
+            class="css-porbx7"
+          >
+            Username
+          </span>
+          <div
+            class="css-bnug8b"
+          >
+            <input
+              class="css-58wzc"
+              name="username"
+              placeholder="username"
+            />
+          </div>
+          <span
+            class="css-tx5ech"
+          >
+             
+          </span>
+        </label>
+        <label
+          class="css-1adzpiz"
+          height="7"
+          width="20"
+        >
+          <span
+            class="css-porbx7"
+          >
+            Email
+          </span>
+          <div
+            class="css-bnug8b"
+          >
+            <input
+              class="css-58wzc"
+              name="email"
+              placeholder="email"
+            />
+          </div>
+          <span
+            class="css-tx5ech"
+          >
+             
+          </span>
+        </label>
+        <label
+          class="css-1adzpiz"
+          height="7"
+          width="20"
+        >
+          <span
+            class="css-porbx7"
+          >
+            Password
+          </span>
+          <div
+            class="css-bnug8b"
+          >
+            <input
+              class="css-58wzc"
+              name="password"
+              placeholder="password"
+            />
+          </div>
+          <span
+            class="css-tx5ech"
+          >
+             
+          </span>
+        </label>
+        <button
+          class="css-odwgcq"
+          color="primary"
+          type="submit"
+        >
+          Sign up
+        </button>
+        <h3>
+          <a
+            class="css-yf649i"
+            href="/login"
+            underline="1"
+          >
+            Log in
+          </a>
+        </h3>
+      </section>
+    </div>
+  </form>
+</div>
+`;

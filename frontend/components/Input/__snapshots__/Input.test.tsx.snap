@@ -3,23 +3,26 @@
 exports[`Input tests should render 1`] = `
 <DocumentFragment>
   <label
-    class="css-12t3jaj"
+    class="css-byxt0r"
     height="7"
     width="20"
   >
     <span
-      class="css-tabsbm"
+      class="css-porbx7"
     >
       Label
     </span>
     <div
-      class="css-o6338a"
+      class="css-bnug8b"
     >
       <input
         class="css-58wzc"
         placeholder="Placeholder"
       />
     </div>
+    <span
+      class="css-tx5ech"
+    />
   </label>
 </DocumentFragment>
 `;
@@ -27,17 +30,17 @@ exports[`Input tests should render 1`] = `
 exports[`Input tests should render with icon 1`] = `
 <DocumentFragment>
   <label
-    class="css-12t3jaj"
+    class="css-byxt0r"
     height="7"
     width="20"
   >
     <span
-      class="css-tabsbm"
+      class="css-porbx7"
     >
       Label
     </span>
     <div
-      class="css-o6338a"
+      class="css-bnug8b"
     >
       <input
         class="css-58wzc"
@@ -57,6 +60,9 @@ exports[`Input tests should render with icon 1`] = `
         />
       </svg>
     </div>
+    <span
+      class="css-tx5ech"
+    />
   </label>
 </DocumentFragment>
 `;

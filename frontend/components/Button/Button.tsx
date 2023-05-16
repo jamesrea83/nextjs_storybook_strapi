@@ -10,9 +10,9 @@ export type Props = {
 	/** Button text */
 	children: string;
 	/** Button color */
-	color: Color;
+	color?: Color;
 	/** Click handler */
-	onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+	onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const getColors = (theme: AppTheme, color?: Color): SerializedStyles => {
