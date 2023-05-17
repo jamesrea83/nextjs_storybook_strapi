@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 
-import { LoginData } from '@/services/userSlice';
-import { mockUser, ValidationError } from '@/mocks/user';
+import { LoginData, RegistrationData } from '@/services/userSlice';
+import { mockUser, ValidationError, RegistrationError } from '@/mocks/user';
 
 const api_url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
@@ -26,4 +26,21 @@ export const handlers = [
 
 		return res(ctx.status(400), ctx.json(ValidationError));
 	}),
+
+	rest.post<RegistrationData>(
+		`${api_url}/auth/local/register`,
+		async (req, res, ctx) => {
+			const { email, password, username } = await req.json();
+
+			if (
+				email === mockUser.user.email &&
+				password === mockUser.user.password &&
+				username === mockUser.user.username
+			) {
+				return res(ctx.status(200), ctx.json(mockUser));
+			}
+
+			return res(ctx.status(400), ctx.json(RegistrationError));
+		}
+	),
 ];
