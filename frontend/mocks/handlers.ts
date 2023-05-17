@@ -27,4 +27,12 @@ export const handlers = [
 
 		return res(ctx.status(400), ctx.json(ValidationError));
 	}),
+
+	rest.get(`${api_url}/users/me`, (req, res, ctx) => {
+		if (req.headers.get('Authorization') === `Bearer ${mockUser.jwt}`) {
+			return res(ctx.status(200), ctx.json(mockUser.user));
+		}
+
+		return res(ctx.status(400), ctx.json(ValidationError));
+	}),
 ];
