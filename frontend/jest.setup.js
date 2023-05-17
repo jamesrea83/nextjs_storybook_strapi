@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
+import 'whatwg-fetch';
 
-import { server } from '@/mocks/handlers';
-import { afterEach } from 'node:test';
+import { server } from '@/mocks/server';
 
 Object.defineProperty(window, 'matchMedia', {
 	writable: true,

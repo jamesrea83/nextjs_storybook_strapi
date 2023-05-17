@@ -54,6 +54,7 @@
 		"msw": "^1.2.1",
 		"prettier": "2.8.8",
 		"storybook": "^7.0.12",
-		"tsconfig-paths-webpack-plugin": "^4.0.1"
+		"tsconfig-paths-webpack-plugin": "^4.0.1",
+		"whatwg-fetch": "^3.6.2"
 	}
 }
