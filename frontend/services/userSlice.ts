@@ -5,6 +5,8 @@ import {
 	SerializedError,
 } from '@reduxjs/toolkit';
 
+import { RootState } from '@/store';
+
 type RequestState = 'pending' | 'fulfilled' | 'rejected';
 
 export type UserState = {
@@ -51,8 +53,11 @@ export const userSlice = createSlice({
 		// Log in & registration flow
 		builder
 			.addMatcher<PayloadAction<UserPayload>>(
-				action => /\/(login|registration)\/fulfilled$/.test(action.type),
+				action => {
+					return /\/(login|registration)\/fulfilled$/.test(action.type);
+				},
 				(state, { payload }) => {
+					console.log('***** login fulfilled', payload);
 					state.requestState = 'fulfilled';
 					state.jwt = payload.jwt;
 					state.username = payload.user.username;
@@ -78,6 +83,8 @@ export const userSlice = createSlice({
 });
 
 export const { actions, reducer } = userSlice;
+
+export const selectUser = ({ user }: RootState) => user;
 
 const api_url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
