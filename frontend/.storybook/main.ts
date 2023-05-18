@@ -16,6 +16,7 @@ const previewAnnotations: StorybookConfig = {
 		'@storybook/addon-interactions',
 		'@storybook/addon-a11y',
 		'@storybook/addon-docs',
+		'@storybook/addon-actions',
 	],
 	typescript: {
 		check: false,

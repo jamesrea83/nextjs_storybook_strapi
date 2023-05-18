@@ -1,3 +1,7 @@
+import { act } from '@testing-library/react';
+import { configureStore } from '@reduxjs/toolkit';
+import { waitFor } from '@/test-utils';
+
 import {
 	reducer,
 	initialState,
@@ -6,13 +10,8 @@ import {
 	registration,
 } from './userSlice';
 import { mockUser, ValidationError, RegistrationError } from '@/mocks/user';
-import { storeCreator as globalStoreCreator } from '@/store';
 
-const rootReducer = {
-	user: reducer,
-};
-
-const storeCreator = () => globalStoreCreator(rootReducer);
+const storeCreator = () => configureStore({ reducer: { user: reducer } });
 
 const updatedState = {
 	jwt: mockUser.jwt,
@@ -32,8 +31,8 @@ const registrationData = {
 };
 
 describe('User slice check', () => {
+	beforeEach(() => localStorage.clear());
 	describe('Login async flow', () => {
-		beforeEach(() => localStorage.clear());
 		it('should have a login success flow', async () => {
 			const store = storeCreator();
 			const storeBeforeLogin = store.getState();
@@ -71,7 +70,7 @@ describe('User slice check', () => {
 		it('should have saved token login flow', async () => {
 			localStorage.setItem('jwt', mockUser.jwt);
 			const store = storeCreator();
-			await store.dispatch(login({}));
+			await store.dispatch(login());
 			const state = store.getState();
 
 			expect(state).toEqual({
@@ -88,8 +87,11 @@ describe('User slice check', () => {
 			const store = storeCreator();
 
 			// Log in
+
 			await store.dispatch(login(loginData));
+
 			const storeAfterLogin = store.getState();
+
 			expect(storeAfterLogin).toEqual({
 				user: {
 					...updatedState,
@@ -103,12 +105,15 @@ describe('User slice check', () => {
 			// Log out
 			await store.dispatch(logout());
 			const storeAfterLogout = store.getState();
-			expect(storeAfterLogout).toEqual({
-				user: { ...initialState },
+
+			await waitFor(() => {
+				expect(storeAfterLogout).toEqual({
+					user: { ...initialState },
+				});
+				expect(localStorage.getItem('jwt')).toBeNull();
+				expect(localStorage.getItem('username')).toBeNull();
+				expect(localStorage.getItem('email')).toBeNull();
 			});
-			expect(localStorage.getItem('jwt')).toBeNull();
-			expect(localStorage.getItem('username')).toBeNull();
-			expect(localStorage.getItem('email')).toBeNull();
 		});
 	});
 

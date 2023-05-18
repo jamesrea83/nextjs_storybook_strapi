@@ -1,9 +1,10 @@
-import { render, screen } from '@/test-utils';
+import { render, screen, waitFor } from '@/test-utils';
 import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
 import { Layout } from './Layout';
 
 describe('Layout tests', () => {
+	localStorage.setItem('theme', 'light');
 	const child = (
 		<>
 			<h1>Main article area</h1>
@@ -17,24 +18,28 @@ describe('Layout tests', () => {
 		</>
 	);
 
-	it('should render', () => {
+	it('should render', async () => {
 		const { asFragment } = render(<Layout>{child}</Layout>);
 
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => {
+			expect(asFragment()).toMatchSnapshot();
+		});
 	});
 
 	it('should toggle theme', async () => {
-		// localStorage.setItem('theme', 'light');
 		(window.matchMedia as jest.Mock).mockReturnValue({ matches: true });
 
 		render(<Layout>{child}</Layout>);
 
 		const themeToggler = screen.getByRole('button', { name: 'Sun' });
-		expect(themeToggler).toBeInTheDocument();
+		await waitFor(() => {
+			expect(themeToggler).toBeInTheDocument();
+		});
 
 		await act(() => userEvent.click(themeToggler));
 
-		// await expect(localStorage.getItem('theme')).toBe('dark');
-		expect(screen.getByRole('button', { name: 'Moon' })).toBeInTheDocument();
+		await waitFor(() => {
+			expect(screen.getByRole('button', { name: 'Moon' })).toBeInTheDocument();
+		});
 	});
 });

@@ -15,7 +15,6 @@ export const handlers = [
 		) {
 			return res(ctx.status(200), ctx.json(mockUser));
 		}
-
 		return res(ctx.status(400), ctx.json(ValidationError));
 	}),
 

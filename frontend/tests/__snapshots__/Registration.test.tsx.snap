@@ -12,6 +12,9 @@ exports[`Registration page should render 1`] = `
         <h2>
           Create an account
         </h2>
+        <h3>
+           
+        </h3>
         <label
           class="css-1adzpiz"
           height="7"

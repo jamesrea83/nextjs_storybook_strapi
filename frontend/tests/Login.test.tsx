@@ -1,12 +1,16 @@
-import { render, screen, act } from '@/test-utils';
+import { pageRender as render, screen, act, waitFor } from '@/test-utils';
 import userEvent from '@testing-library/user-event';
 
 import Login from '@/pages/login';
 
+jest.mock('next/router', () => ({
+	useRouter: jest.fn(),
+}));
+
 describe('Login page', () => {
-	it('should render', () => {
+	it('should render', async () => {
 		const { container } = render(<Login />);
-		expect(container).toMatchSnapshot();
+		await waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it('should validate input', async () => {
@@ -33,6 +37,6 @@ describe('Login page', () => {
 		await act(() => userEvent.type(identifierInput, 'test@test.com'));
 		await act(() => userEvent.type(passwordInput, 'testtesttest'));
 
-		await expect(screen.queryByText('Min length 6!')).not.toBeInTheDocument();
+		expect(screen.queryByText('Min length 6!')).not.toBeInTheDocument();
 	});
 });

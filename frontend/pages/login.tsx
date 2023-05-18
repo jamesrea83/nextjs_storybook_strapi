@@ -27,15 +27,15 @@ const Login: NextPage = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<LoginForm>();
-	const router = useRouter();
 	const dispatch = useDispatch<AppDispatch>();
 	const { jwt, error } = useSelector<RootState, RootState['user']>(selectUser);
+	const router = useRouter();
 
 	if (Boolean(jwt) && !error) {
 		router.push('/user');
 	}
 
-	const onSubmit = async (data: LoginForm) => await dispatch(login(data));
+	const onSubmit = (data: LoginForm) => dispatch(login(data));
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
