@@ -1,9 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Provider } from 'react-redux';
+
+import { store } from '@/store';
 import { Layout } from '.';
 
 export default {
 	title: 'Content/Layout',
 	component: Layout,
+	decorators: [
+		Story => (
+			<Provider store={store}>
+				<Story />
+			</Provider>
+		),
+	],
 } as Meta<typeof Layout>;
 
 type Story = StoryObj<typeof Layout>;
