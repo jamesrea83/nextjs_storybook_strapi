@@ -33,7 +33,9 @@ const Registration: NextPage = () => {
 	if (Boolean(jwt) && !error) {
 		router.push('/user');
 	}
-	const onSubmit = (data: RegistrationData) => dispatch(registration(data));
+	const onSubmit = (data: RegistrationData) => {
+		dispatch(registration(data));
+	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>

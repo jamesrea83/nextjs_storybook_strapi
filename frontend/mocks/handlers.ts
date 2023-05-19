@@ -8,7 +8,6 @@ const api_url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 export const handlers = [
 	rest.post<LoginData>(`${api_url}/auth/local`, async (req, res, ctx) => {
 		const { identifier, password } = await req.json();
-
 		if (
 			identifier === mockUser.user.email &&
 			password === mockUser.user.password
@@ -30,7 +29,6 @@ export const handlers = [
 		`${api_url}/auth/local/register`,
 		async (req, res, ctx) => {
 			const { email, password, username } = await req.json();
-
 			if (
 				email === mockUser.user.email &&
 				password === mockUser.user.password &&
