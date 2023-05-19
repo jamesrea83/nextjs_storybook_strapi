@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { expect } from '@storybook/jest';
+import { expect, jest } from '@storybook/jest';
 import { screen, userEvent } from '@storybook/testing-library';
 import { Checkbox } from '.';
 
 export default {
 	title: 'Controls/Checkbox',
 	component: Checkbox,
+	args: {
+		onChange: jest.fn(),
+	},
 } as Meta<typeof Checkbox>;
 
 type Story = StoryObj<typeof Checkbox>;

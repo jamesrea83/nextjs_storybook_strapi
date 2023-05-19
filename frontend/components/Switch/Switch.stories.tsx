@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { expect } from '@storybook/jest';
+import { expect, jest } from '@storybook/jest';
 import { screen, userEvent } from '@storybook/testing-library';
 import { Switch } from '.';
 
 export default {
 	title: 'Controls/Switch',
 	component: Switch,
+	args: {
+		onChange: jest.fn(),
+	},
 } as Meta<typeof Switch>;
 
 type Story = StoryObj<typeof Switch>;
