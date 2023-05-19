@@ -1,11 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { expect } from '@storybook/jest';
-import { screen, userEvent } from '@storybook/testing-library';
+import { Provider } from 'react-redux';
+
+import { store } from '@/store';
 import { Layout } from '.';
 
 export default {
 	title: 'Content/Layout',
 	component: Layout,
+	decorators: [
+		Story => (
+			<Provider store={store}>
+				<Story />
+			</Provider>
+		),
+	],
 } as Meta<typeof Layout>;
 
 type Story = StoryObj<typeof Layout>;

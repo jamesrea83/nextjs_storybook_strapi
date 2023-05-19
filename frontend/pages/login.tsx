@@ -1,7 +1,11 @@
 import type { NextPage } from 'next';
-import { forwardRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
+
+import { RootState, AppDispatch } from '@/store';
+import { selectUser, login } from '@/services/userSlice';
 
 import { CenteredTile } from '@/components/Tile';
 import { Input, ConditionalFeedback } from '@/components/Input';
@@ -23,14 +27,22 @@ const Login: NextPage = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<LoginForm>();
+	const dispatch = useDispatch<AppDispatch>();
+	const { jwt, error } = useSelector<RootState, RootState['user']>(selectUser);
+	const router = useRouter();
 
-	const onSubmit = (data: LoginForm) => {
-		console.log(data);
-	};
+	if (Boolean(jwt) && !error) {
+		router.push('/user');
+	}
+
+	const onSubmit = (data: LoginForm) => dispatch(login(data));
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<CenteredTile header="Login">
+				<h3>
+					<ConditionalFeedback>{error?.message}</ConditionalFeedback>
+				</h3>
 				<StyledInput
 					{...register('identifier', {
 						required: 'Required field',

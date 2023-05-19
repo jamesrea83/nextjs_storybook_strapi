@@ -2,87 +2,207 @@
 
 exports[`Login page should render 1`] = `
 <div>
-  <form>
-    <div
-      class="css-42099h"
+  <div
+    class="css-7ldzj2"
+  >
+    <a
+      class="css-o4zmmn"
+      href="/"
     >
-      <section
-        class="css-1beoq7g"
+      <header
+        class="css-1o718mr"
+        size="3"
       >
-        <h2>
-          Login
-        </h2>
-        <label
-          class="css-fp4izo"
-          height="8"
-          width="20"
+        <span
+          class="logo_short"
         >
-          <span
-            class="css-porbx7"
-          >
-            Identifier
-          </span>
-          <div
-            class="css-bnug8b"
-          >
-            <input
-              class="css-58wzc"
-              name="identifier"
-              placeholder="username or email"
-              role="textbox"
-            />
-          </div>
-          <span
-            class="css-tx5ech"
-          >
-             
-          </span>
-        </label>
-        <label
-          class="css-fp4izo"
-          height="8"
-          width="20"
+          C8X
+        </span>
+        <span
+          class="logo_full"
         >
-          <span
-            class="css-porbx7"
-          >
-            Password
-          </span>
-          <div
-            class="css-bnug8b"
-          >
-            <input
-              class="css-58wzc"
-              name="password"
-              placeholder="password"
-              role="textbox"
-              type="password"
-            />
-          </div>
-          <span
-            class="css-tx5ech"
-          >
-             
-          </span>
-        </label>
+          CoursesBox
+        </span>
+      </header>
+    </a>
+    <nav
+      class="css-181tzcb"
+    >
+      <a
+        class="css-nzbn0p"
+        href="/all"
+      >
+        All
+      </a>
+      <a
+        class="css-nzbn0p"
+        href="/login"
+      >
         <button
-          class="css-odwgcq"
-          color="primary"
-          type="submit"
+          class="css-636gg9"
+          title="Login"
         >
-          Sign in
-        </button>
-        <h3>
-          <a
-            class="css-yf649i"
-            href="/registration"
-            underline="1"
+          <svg
+            aria-label="Login"
+            class="css-2gue7k"
+            fill="currentColor"
+            height="1rem"
+            role="img"
+            viewBox="0 0 900 1000"
+            width="1rem"
           >
-            Create account
-          </a>
-        </h3>
-      </section>
-    </div>
-  </form>
+            <path
+              d="M800 50c28 0 51.667 9.667 71 29s29 43 29 71v700c0 26.667-9.667 50-29 70s-43 30-71 30H350c-26.667 0-49.667-10-69-30s-29-43.333-29-70V750h98v100h450V150H350v150h-98V150c0-28 9.667-51.667 29-71s42.333-29 69-29h450M450 720V600H0V450h450V330l200 194-200 196"
+            />
+          </svg>
+        </button>
+      </a>
+      <button
+        class="css-636gg9"
+        title="Moon"
+      >
+        <svg
+          aria-label="Moon"
+          class="css-2gue7k"
+          fill="currentColor"
+          height="1rem"
+          role="img"
+          viewBox="0 0 16 16"
+          width="1rem"
+        >
+          <path
+            d="M6 .278a.768.768 0 01.08.858 7.208 7.208 0 00-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 01.81.316.733.733 0 01-.031.893A8.349 8.349 0 018.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 016 .278zM4.858 1.311A7.269 7.269 0 001.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 005.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"
+          />
+        </svg>
+      </button>
+    </nav>
+    <label
+      class="css-1f2mqsx"
+      height="7"
+      width="20"
+    >
+      <span
+        class="css-porbx7"
+      />
+      <div
+        class="css-bnug8b"
+      >
+        <input
+          class="css-58wzc"
+          placeholder="Search"
+        />
+        <svg
+          aria-label="Search"
+          class="css-jp31fy"
+          fill="currentColor"
+          height="2rem"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="2rem"
+        >
+          <path
+            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+          />
+        </svg>
+      </div>
+      <span
+        class="css-tx5ech"
+      />
+    </label>
+    <main
+      class="css-1rmbvox"
+    >
+      <form>
+        <div
+          class="css-42099h"
+        >
+          <section
+            class="css-1beoq7g"
+          >
+            <h2>
+              Login
+            </h2>
+            <h3>
+               
+            </h3>
+            <label
+              class="css-fp4izo"
+              height="8"
+              width="20"
+            >
+              <span
+                class="css-porbx7"
+              >
+                Identifier
+              </span>
+              <div
+                class="css-bnug8b"
+              >
+                <input
+                  class="css-58wzc"
+                  name="identifier"
+                  placeholder="username or email"
+                  role="textbox"
+                />
+              </div>
+              <span
+                class="css-tx5ech"
+              >
+                 
+              </span>
+            </label>
+            <label
+              class="css-fp4izo"
+              height="8"
+              width="20"
+            >
+              <span
+                class="css-porbx7"
+              >
+                Password
+              </span>
+              <div
+                class="css-bnug8b"
+              >
+                <input
+                  class="css-58wzc"
+                  name="password"
+                  placeholder="password"
+                  role="textbox"
+                  type="password"
+                />
+              </div>
+              <span
+                class="css-tx5ech"
+              >
+                 
+              </span>
+            </label>
+            <button
+              class="css-odwgcq"
+              color="primary"
+              type="submit"
+            >
+              Sign in
+            </button>
+            <h3>
+              <a
+                class="css-yf649i"
+                href="/registration"
+                underline="1"
+              >
+                Create account
+              </a>
+            </h3>
+          </section>
+        </div>
+      </form>
+    </main>
+    <footer
+      class="css-1b0zqog"
+    >
+      Footer
+    </footer>
+  </div>
 </div>
 `;

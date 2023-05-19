@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { expect } from '@storybook/jest';
+import { expect, jest } from '@storybook/jest';
 import { Button } from '.';
 import { screen, userEvent } from '@storybook/testing-library';
 
@@ -8,6 +8,7 @@ export default {
 	component: Button,
 	args: {
 		children: 'Button',
+		onClick: jest.fn(),
 	},
 } as Meta<typeof Button>;
 

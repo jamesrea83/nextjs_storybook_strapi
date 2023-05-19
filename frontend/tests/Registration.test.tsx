@@ -3,6 +3,10 @@ import userEvent from '@testing-library/user-event';
 
 import Registration from '@/pages/registration';
 
+jest.mock('next/router', () => ({
+	useRouter: jest.fn(),
+}));
+
 describe('Registration page', () => {
 	it('should render', () => {
 		const { container } = render(<Registration />);

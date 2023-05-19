@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 import { boxShadow, transition } from '@/components/styles';
-import { Icon, Props as IconProps } from '@/components/Icon';
+import { Icon, Props as IconProps, AvailableIcons } from '@/components/Icon';
 
 type ButtonProps = {
 	size: string;
@@ -35,9 +35,13 @@ const Button = styled.button<ButtonProps>`
 `;
 
 export type Props = {
+	/**  Width & height */
+	size?: number;
+	/**  Icon name */
+	name: AvailableIcons;
 	/** onClick callback */
 	onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-} & IconProps;
+};
 
 export const IconButton: FC<Props> = ({ onClick, ...props }) => (
 	<Button

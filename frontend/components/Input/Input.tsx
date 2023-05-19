@@ -9,7 +9,6 @@ import {
 import styled from '@emotion/styled';
 
 import { boxShadow } from '../styles';
-import { useId } from '@/components/hooks/useId';
 import { Icon, AvailableIcons } from '@/components/Icon';
 
 type WrapperProps = {

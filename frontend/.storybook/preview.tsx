@@ -24,12 +24,10 @@ export const parameters = {
 
 const withThemeProvider = (Story, context) => {
 	const background =
-		context.globals.backgrounds?.value ||
-		parameters.backgrounds.defaultColor;
+		context.globals.backgrounds?.value || parameters.backgrounds.defaultColor;
 
 	const theme =
-		Object.values(Themes).find(theme => theme.background === background) ||
-		{};
+		Object.values(Themes).find(theme => theme.background === background) || {};
 
 	return (
 		<ThemeProvider theme={theme}>

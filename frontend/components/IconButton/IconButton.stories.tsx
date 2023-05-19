@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { expect } from '@storybook/jest';
+import { expect, jest } from '@storybook/jest';
 import { screen, userEvent } from '@storybook/testing-library';
 import { IconButton } from '.';
 
 export default {
 	title: 'Controls/IconButton',
 	component: IconButton,
+	args: {
+		onClick: jest.fn(),
+	},
 } as Meta<typeof IconButton>;
 
 type Story = StoryObj<typeof IconButton>;
