@@ -19,11 +19,11 @@ type CoursesResponse = Response<CourseType[]>;
 export const getStaticProps: GetStaticProps = async () => {
 	const api_url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
-	const responce = await fetch(`${api_url}/courses?populate=*`, {
+	const response = await fetch(`${api_url}/courses?populate=*`, {
 		method: 'GET',
 	});
 
-	const { data: courses, meta, error }: CoursesResponse = await responce.json();
+	const { data: courses, meta, error }: CoursesResponse = await response.json();
 
 	const status = error?.status;
 
