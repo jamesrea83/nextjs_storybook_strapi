@@ -2,12 +2,12 @@
 
 exports[`Course tests should render 1`] = `
 <DocumentFragment>
-  <section
-    class="css-18jn3fb"
+  <a
+    class="css-1j685to"
+    href="test-link"
   >
-    <a
-      class="css-3vnsw8"
-      href="test-link"
+    <section
+      class="css-11mg38j"
     >
       <h2>
         This is a header
@@ -24,7 +24,7 @@ exports[`Course tests should render 1`] = `
         width="1368"
       />
       orem ipsum dolor sit amet. Eum quaerat odio cum soluta quas aut sunt repellat et aliquid laboriosam. Aut corrupti excepturi est consequatur nostrum aut quos facere. Sit nobis voluptatum non veniam fuga est ducimus mollitia vel perspiciatis mollitia aut commodi praesentium vel officiis repellendus.
-    </a>
-  </section>
+    </section>
+  </a>
 </DocumentFragment>
 `;

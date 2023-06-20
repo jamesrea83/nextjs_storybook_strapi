@@ -28,7 +28,6 @@ describe('User page', () => {
 		expect(container).toMatchSnapshot();
 	});
 	it('Load user', async () => {
-		console.log('*****', preloadedState);
 		const { container } = render(<User />, {
 			preloadedState,
 		});
