@@ -11,7 +11,3 @@ export const ModuleButton = ({ style }: Props) => {
 };
 
 export const PrimaryModuleButton = () => <ModuleButton></ModuleButton>;
-
-export const SecondaryModuleButton = () => (
-	<ModuleButton style={styles.secondary}></ModuleButton>
-);
