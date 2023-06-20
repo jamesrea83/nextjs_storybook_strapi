@@ -25,9 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const { data: courses, meta, error }: CoursesResponse = await response.json();
 
-	const status = error?.status;
-
-	if (status && (status < 200 || status >= 300)) {
+	if (error) {
 		return {
 			props: {
 				courses: [],
@@ -35,6 +33,17 @@ export const getStaticProps: GetStaticProps = async () => {
 			},
 		};
 	}
+
+	// const status = error?.status;
+
+	// if (status && (status < 200 || status >= 300)) {
+	// 	return {
+	// 		props: {
+	// 			courses: [],
+	// 			meta: {},
+	// 		},
+	// 	};
+	// }
 
 	return {
 		props: {
