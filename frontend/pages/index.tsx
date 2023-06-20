@@ -23,9 +23,31 @@ export const getStaticProps: GetStaticProps = async () => {
 		method: 'GET',
 	});
 
-	const { data: courses, meta, error }: CoursesResponse = await response.json();
+	try {
+		const {
+			data: courses,
+			meta,
+			error,
+		}: CoursesResponse = await response.json();
 
-	if (error) {
+		const status = error?.status;
+
+		if (status && (status < 200 || status >= 300)) {
+			return {
+				props: {
+					courses: [],
+					meta: {},
+				},
+			};
+		}
+
+		return {
+			props: {
+				courses,
+				meta,
+			},
+		};
+	} catch {
 		return {
 			props: {
 				courses: [],
@@ -33,24 +55,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			},
 		};
 	}
-
-	// const status = error?.status;
-
-	// if (status && (status < 200 || status >= 300)) {
-	// 	return {
-	// 		props: {
-	// 			courses: [],
-	// 			meta: {},
-	// 		},
-	// 	};
-	// }
-
-	return {
-		props: {
-			courses,
-			meta,
-		},
-	};
 };
 
 const strapi_url = process.env.NEXT_PUBLIC_STRAPI_URL;
