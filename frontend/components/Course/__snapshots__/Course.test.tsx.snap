@@ -3,11 +3,11 @@
 exports[`Course tests should render 1`] = `
 <DocumentFragment>
   <a
-    class="css-1ll9c24"
+    class="css-1j685to"
     href="test-link"
   >
     <section
-      class="css-1o1nhjl"
+      class="css-11mg38j"
     >
       <h2>
         This is a header
